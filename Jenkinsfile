@@ -1,5 +1,8 @@
 node {
-
+    stage("check file"){
+        sh ''' ls '''
+    }
+    stage("1"){
     checkout scm
 
     docker.withRegistry('https://registry.hub.docker.com', 'docker-credentials') {
@@ -9,4 +12,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
     }
+    }
+
+
 }
