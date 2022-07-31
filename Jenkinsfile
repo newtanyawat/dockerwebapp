@@ -3,6 +3,7 @@ node {
         sh ''' ls '''
     }
     stage("1"){
+        sh ''' ls '''
     checkout scm
 
     docker.withRegistry('https://registry.hub.docker.com', 'docker-credentials') {
